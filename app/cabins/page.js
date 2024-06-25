@@ -2,6 +2,11 @@ import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 
+//data(Cabins) change from time to time, but not constantly.
+//fetch data every 1 hour works for data that might change once everyday.
+export const revalidate = 3600;
+//considering partial pre-rendering, it is best to put revalidate in the <CabinList /> within Suspense, keep this shell of page static
+
 export const metadata = {
   title: "Cabins",
 };
@@ -21,6 +26,7 @@ export default function Page() {
         Welcome to paradise.
       </p>
 
+      {/* dynamic componenet */}
       <Suspense fallback={<Spinner />}>
         <CabinList />
       </Suspense>
