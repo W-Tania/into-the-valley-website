@@ -1,17 +1,22 @@
 import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
+import Filter from "../_components/Filter";
 
 //data(Cabins) change from time to time, but not constantly.
 //fetch data every 1 hour works for data that might change once everyday.
-export const revalidate = 3600;
+// export const revalidate = 3600;
 //considering partial pre-rendering, it is best to put revalidate in the <CabinList /> within Suspense, keep this shell of page static
+//after adding the filter, using searchParams make the page dynamic and not static, no need to revalidate
 
 export const metadata = {
   title: "Cabins",
 };
 
-export default function Page() {
+export default function Page({ searchParams }) {
+  // searchParams only available on page.js(server), not on all server components
+  const filter = searchParams?.capacity ?? "all";
+
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -27,8 +32,16 @@ export default function Page() {
       </p>
 
       {/* dynamic componenet */}
-      <Suspense fallback={<Spinner />}>
-        <CabinList />
+
+      <div className="flex justify-end mb-8">
+        <Filter />
+      </div>
+
+      {/* when filtered cabins change, the spinner doesn't show. 
+      Because Navigation is wrapped in React transition. And for transition, suspense doesn't hide the already rendered content
+      To fix it, give suspense a unique key */}
+      <Suspense fallback={<Spinner />} key={filter}>
+        <CabinList filter={filter} />
       </Suspense>
     </div>
   );
