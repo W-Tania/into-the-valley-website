@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <nav className="z-10 text-xl">
+    <nav className="z-10 text-base">
       <ul className="flex gap-16 items-center">
         <li>
           <Link
