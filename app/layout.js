@@ -1,12 +1,10 @@
-import Logo from "@/app/_components/Logo";
-import Navigation from "@/app/_components/Navigation";
-
 //specify font
 import { Josefin_Sans } from "next/font/google";
 const josefin = Josefin_Sans({ subsets: ["latin"], display: "swap" });
 
 import "@/app/_styles/globals.css";
 import Header from "./_components/Header";
+import { ReservationProvider } from "./_components/ReservationContext";
 
 export const metadata = {
   // title: "The Wild Oasis",
@@ -26,7 +24,10 @@ export default function RootLayout({ children }) {
       >
         <Header />
         <div className="flex-1 px-8 py-12 grid">
-          <main className="max-w-7xl mx-auto w-full">{children}</main>
+          <main className="max-w-7xl mx-auto w-full">
+            {/* passing/rendering server components as props insider client components */}
+            <ReservationProvider>{children}</ReservationProvider>
+          </main>
         </div>
       </body>
     </html>

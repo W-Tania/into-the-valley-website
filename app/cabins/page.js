@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 
 //data(Cabins) change from time to time, but not constantly.
 //fetch data every 1 hour works for data that might change once everyday.
@@ -42,6 +43,7 @@ export default function Page({ searchParams }) {
       To fix it, give suspense a unique key */}
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );
