@@ -15,10 +15,15 @@ const authConfig = {
       //if not authenticated, NextAuth.js redirect to sign-in automatically based on callback configuration.
     },
   },
+  pages: {
+    signIn: "/login",
+  },
 };
 // when user hit the protected route, the authorized callback will be called
 
 export const {
   auth,
+  signIn,
+  signOut,
   handlers: { GET, POST },
 } = NextAuth(authConfig);
