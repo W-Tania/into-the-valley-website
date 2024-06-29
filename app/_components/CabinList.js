@@ -1,6 +1,6 @@
 import CabinCard from "@/app/_components/CabinCard";
 import { getCabins } from "../_lib/data-service";
-import { unstable_noStore as noStore } from "next/cache";
+// import { unstable_noStore as noStore } from "next/cache";
 
 async function CabinList({ filter }) {
   //opt the component out of data caching
