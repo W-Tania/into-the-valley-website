@@ -45,9 +45,7 @@ function UpdateReservationForm({
       </div>
 
       <div className="flex justify-end items-center gap-6">
-        <FormSubmitButton pendingLabel="Updating...">
-          Update Reservation
-        </FormSubmitButton>
+        <FormSubmitButton>Update Reservation</FormSubmitButton>
       </div>
     </form>
   );
