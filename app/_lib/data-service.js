@@ -108,7 +108,7 @@ export async function getBookedDatesByCabinId(cabinId) {
     .from("bookings")
     .select("*")
     .eq("cabinId", cabinId)
-    .or(`startDate.gte.${today},status.eq.checked-in`);
+    .or(`endDate.gte.${today},status.eq.checked-in`);
 
   if (error) {
     console.error(error);
@@ -165,6 +165,7 @@ export async function createGuest(newGuest) {
   return data;
 }
 
+/*
 export async function createBooking(newBooking) {
   const { data, error } = await supabase
     .from("bookings")
@@ -180,3 +181,5 @@ export async function createBooking(newBooking) {
 
   return data;
 }
+
+*/
