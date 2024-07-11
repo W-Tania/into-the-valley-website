@@ -18,7 +18,7 @@ function CabinDetail({ cabin }) {
       </div>
 
       <div>
-        <h3 className="text-accent-100 font-black text-5xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
+        <h3 className="text-accent-100 font-extrabold text-5xl mb-5 translate-x-[-254px] bg-primary-950 p-6 pb-1 w-[150%]">
           Cabin {name}
         </h3>
 

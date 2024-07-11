@@ -9,7 +9,7 @@ function UpdateReservationForm({
 }) {
   return (
     <form
-      className="bg-primary-900 py-8 px-16 text-base flex gap-8 flex-col"
+      className="bg-primary-900 py-8 px-6 sm:px-16 text-base flex gap-8 flex-col"
       action={updateReservation}
     >
       <input type="hidden" name="bookingId" value={bookingId} />

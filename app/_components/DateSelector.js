@@ -25,7 +25,7 @@ function DateSelector({ settings, bookedDates, cabin }) {
   const { range, setRange, resetRange } = useReservation();
 
   //when the user selected a date range and move to other cabins, check whether the date is still available
-  const displayRange = isAlreadyBooked(range, bookedDates) ? {} :range;
+  const displayRange = isAlreadyBooked(range, bookedDates) ? {} : range;
 
   const { regularPrice, discount } = cabin;
   const numNights = differenceInDays(displayRange?.to, displayRange?.from);
@@ -36,7 +36,7 @@ function DateSelector({ settings, bookedDates, cabin }) {
   return (
     <div className="flex flex-col justify-between">
       <DayPicker
-        className="pt-12 place-self-center"
+        className="py-12 place-self-center"
         mode="range"
         onSelect={setRange}
         selected={displayRange}
@@ -75,8 +75,8 @@ function DateSelector({ settings, bookedDates, cabin }) {
               </p>
               <span>nights = </span>
               <p>
-                <span className="text-lg font-bold uppercase">Total</span>{" "}
-                <span className="bg-accent-600 px-3 py-1 text-2xl font-semibold">
+                <span>total</span>
+                <span className="px-2 text-2xl font-semibold">
                   ${cabinPrice}
                 </span>
               </p>

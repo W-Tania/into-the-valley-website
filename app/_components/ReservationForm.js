@@ -26,8 +26,8 @@ function ReservationForm({ cabin, user }) {
   const createReservationWithDate = createReservation.bind(null, bookingData);
 
   return (
-    <div className="scale-[1.01]">
-      <div className="bg-primary-800 text-primary-300 px-16 py-4 gap-4 flex items-center">
+    <div>
+      <div className="bg-primary-800 text-primary-300 px-8 md:px-16 py-4 gap-4 flex items-center">
         <p>Logged in as {user.name}</p>
         <img
           // Important to display google profile images
@@ -36,11 +36,6 @@ function ReservationForm({ cabin, user }) {
           src={user.image}
           alt={user.name}
         />
-
-        {/* <div className="flex  items-center">
-          <p></p>
-          
-        </div> */}
       </div>
 
       <form
@@ -49,7 +44,7 @@ function ReservationForm({ cabin, user }) {
           await createReservationWithDate(formData);
           resetRange();
         }}
-        className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col"
+        className="bg-primary-900 py-10 px-8 md:px-16 text-lg flex gap-5 flex-col"
       >
         <div className="space-y-2">
           <label htmlFor="numGuests">How many guests?</label>

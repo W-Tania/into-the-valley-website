@@ -33,6 +33,13 @@
 /* For data picker */
 
 .rdp {
+  .rdp-months {
+    @apply grid md:flex;
+    gap: 4rem;
+    .rdp-month {
+      margin: 0;
+    }
+  }
   --rdp-cell-size: 32px !important;
   --rdp-accent-color: theme("colors.accent.500") !important;
   --rdp-background-color: theme("colors.accent.600") !important;

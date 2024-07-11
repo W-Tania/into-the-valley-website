@@ -11,10 +11,11 @@ function Logo() {
         height="60"
         width="60"
         quality={100}
-        alt="The Wild Oasis logo"
+        alt="Into the Valley logo"
+        className="scale-75 md:scale-100"
       />
-      <span className="text-base font-semibold text-primary-100">
-        The Wild Oasis
+      <span className="text-sm sm:text-base font-semibold text-primary-100">
+        Into the Valley
       </span>
     </Link>
   );

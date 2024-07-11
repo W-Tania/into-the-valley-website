@@ -24,8 +24,8 @@ function ReservationCard({ booking, onDelete }) {
   } = booking;
 
   return (
-    <div className="flex border border-primary-800">
-      <div className="relative h-32 aspect-square">
+    <div className="grid sm:flex border border-primary-800">
+      <div className="relative min-h-32 aspect-square">
         <Image
           src={image}
           alt={`Cabin ${name}`}
@@ -58,24 +58,28 @@ function ReservationCard({ booking, onDelete }) {
           ) &mdash; {format(new Date(endDate), "EEE, dd MMM yyyy")}
         </p>
 
-        <div className="flex gap-5 mt-auto items-baseline">
-          <p className="text-lg font-semibold text-accent-400">${totalPrice}</p>
-          <p className="text-primary-300">&bull;</p>
-          <p className="text-base text-primary-300">
-            {numGuests} guest{numGuests > 1 && "s"}
-          </p>
-          <p className="ml-auto text-sm text-primary-400">
+        <div className="gap-5 mt-auto ">
+          <div className="flex gap-5 items-center">
+            <p className="text-lg font-semibold text-accent-400">
+              ${totalPrice}
+            </p>
+            <p className="text-primary-300">&bull;</p>
+            <p className="text-base text-primary-300">
+              {numGuests} guest{numGuests > 1 && "s"}
+            </p>
+          </div>
+          <p className="text-sm font-light text-primary-400 text-right">
             Booked on {format(new Date(created_at), "EEE, MMM dd yyyy, p")}
           </p>
         </div>
       </div>
 
-      <div className="flex flex-col border-l border-primary-800 w-[100px]">
+      <div className="flex flex-row sm:flex-col grow border-t sm:border-l sm:border-t-0 border-primary-800 min-w-[100px] max-w-[150px] min-h-[50px]">
         {!isPast(startDate) ? (
           <>
             <Link
               href={`/account/reservations/edit/${id}`}
-              className="group flex items-center gap-2 uppercase text-xs font-bold text-primary-300 border-b border-primary-800 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900"
+              className="group flex justify-center items-center gap-2 uppercase text-xs font-bold text-primary-300 border-primary-800 flex-grow px-3 hover:bg-accent-600 transition-colors hover:text-primary-900"
             >
               <PencilSquareIcon className="h-5 w-5 text-primary-600 group-hover:text-primary-800 transition-colors" />
               <span className="mt-1">Edit</span>

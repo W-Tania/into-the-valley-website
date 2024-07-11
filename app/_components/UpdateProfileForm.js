@@ -13,7 +13,7 @@ function UpdateProfileForm({ guest, children }) {
   return (
     <form
       action={updateProfile}
-      className="bg-primary-900 py-8 px-16 text-base flex gap-8 flex-col"
+      className="bg-primary-900 py-8 px-6 sm:px-16 text-base flex gap-8 flex-col"
     >
       <div className="space-y-2">
         <label>Full name</label>
