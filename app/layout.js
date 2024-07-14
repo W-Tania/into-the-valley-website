@@ -20,11 +20,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} antialiased bg-primary-950 text-primary-100 min-h-screen flex flex-col relative`}
+        className={`${montserrat.className} relative flex min-h-screen flex-col bg-primary-950 text-primary-100 antialiased`}
       >
         <Header />
-        <div className="flex-1 px-6 md:px-12 pt-12 pb-[120px] grid ">
-          <main className="max-w-7xl mx-auto w-full">
+        <div className="grid flex-1 px-6 pb-[120px] pt-12 md:px-12">
+          <main className="mx-auto w-full max-w-7xl">
             {/* passing/rendering server components as props insider client components */}
             <ReservationProvider>{children}</ReservationProvider>
           </main>

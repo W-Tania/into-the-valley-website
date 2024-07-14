@@ -20,10 +20,10 @@ export default function Page({ searchParams }) {
 
   return (
     <div>
-      <h1 className="text-2xl mb-5 text-accent-400 font-medium">
+      <h1 className="mb-5 text-2xl font-medium text-accent-400">
         Our Luxury Cabins
       </h1>
-      <p className="text-primary-200 text-base mb-10">
+      <p className="mb-10 text-base text-primary-200">
         Cozy yet luxurious cabins, located right in the heart of the Italian
         Dolomites. Imagine waking up to beautiful mountain views, spending your
         days exploring the dark forests around, or just relaxing in your private
@@ -34,7 +34,7 @@ export default function Page({ searchParams }) {
 
       {/* dynamic componenet */}
 
-      <div className="flex justify-end mb-8">
+      <div className="mb-8 flex justify-end">
         <Filter />
       </div>
 

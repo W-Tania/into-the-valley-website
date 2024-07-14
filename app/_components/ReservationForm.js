@@ -27,7 +27,7 @@ function ReservationForm({ cabin, user }) {
 
   return (
     <div>
-      <div className="bg-primary-800 text-primary-300 px-8 md:px-16 py-4 gap-4 flex items-center">
+      <div className="flex items-center gap-4 bg-primary-800 px-8 py-4 text-primary-300 md:px-16">
         <p>Logged in as {user.name}</p>
         <img
           // Important to display google profile images
@@ -44,14 +44,14 @@ function ReservationForm({ cabin, user }) {
           await createReservationWithDate(formData);
           resetRange();
         }}
-        className="bg-primary-900 py-10 px-8 md:px-16 text-lg flex gap-5 flex-col"
+        className="flex flex-col gap-5 bg-primary-900 px-8 py-10 text-lg md:px-16"
       >
         <div className="space-y-2">
           <label htmlFor="numGuests">How many guests?</label>
           <select
             name="numGuests"
             id="numGuests"
-            className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+            className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm"
             required
           >
             <option value="" key="">
@@ -72,14 +72,14 @@ function ReservationForm({ cabin, user }) {
           <textarea
             name="observations"
             id="observations"
-            className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+            className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm"
             placeholder="Any pets, allergies, special requirements, etc.?"
           />
         </div>
 
-        <div className="flex justify-end items-center gap-6">
+        <div className="flex items-center justify-end gap-6">
           {!(startDate && endDate) ? (
-            <p className="text-primary-300 text-base">
+            <p className="text-base text-primary-300">
               Start by selecting dates
             </p>
           ) : (

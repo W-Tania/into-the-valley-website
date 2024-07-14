@@ -21,10 +21,10 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <h2 className="font-semibold text-2xl text-accent-400 flex mb-7">
+      <h2 className="mb-7 flex text-2xl font-semibold text-accent-400">
         Edit Reservation #{bookingId}
       </h2>
-      <div className="text-sm text-primary-300 my-4 flex justify-between">
+      <div className="my-4 flex justify-between text-sm text-primary-300">
         <span>
           {format(new Date(startDate), "EEE, dd MMM yyyy")} &mdash;
           {format(new Date(endDate), "EEE, dd MMM yyyy")} at Cabin {name}

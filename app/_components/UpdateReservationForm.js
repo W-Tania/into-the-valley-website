@@ -9,7 +9,7 @@ function UpdateReservationForm({
 }) {
   return (
     <form
-      className="bg-primary-900 py-8 px-6 sm:px-16 text-base flex gap-8 flex-col"
+      className="flex flex-col gap-8 bg-primary-900 px-6 py-8 text-base sm:px-16"
       action={updateReservation}
     >
       <input type="hidden" name="bookingId" value={bookingId} />
@@ -19,7 +19,7 @@ function UpdateReservationForm({
           name="numGuests"
           id="numGuests"
           defaultValue={numGuests}
-          className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+          className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm"
           required
         >
           <option value="" key="">
@@ -40,11 +40,11 @@ function UpdateReservationForm({
         <textarea
           name="observations"
           defaultValue={observations}
-          className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"
+          className="w-full rounded-sm bg-primary-200 px-5 py-3 text-primary-800 shadow-sm"
         />
       </div>
 
-      <div className="flex justify-end items-center gap-6">
+      <div className="flex items-center justify-end gap-6">
         <FormSubmitButton>Update Reservation</FormSubmitButton>
       </div>
     </form>

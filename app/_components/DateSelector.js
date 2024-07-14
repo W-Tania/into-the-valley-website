@@ -16,7 +16,7 @@ function isAlreadyBooked(range, datesArr) {
     range?.from &&
     range?.to &&
     datesArr.some((date) =>
-      isWithinInterval(date, { start: range.from, end: range.to })
+      isWithinInterval(date, { start: range.from, end: range.to }),
     )
   );
 }
@@ -36,7 +36,7 @@ function DateSelector({ settings, bookedDates, cabin }) {
   return (
     <div className="flex flex-col justify-between">
       <DayPicker
-        className="py-12 place-self-center"
+        className="place-self-center py-12"
         mode="range"
         onSelect={setRange}
         selected={displayRange}
@@ -53,12 +53,12 @@ function DateSelector({ settings, bookedDates, cabin }) {
         }
       />
 
-      <div className="flex items-center justify-between px-6 bg-accent-500 text-primary-800 h-[72px]">
+      <div className="flex h-[72px] items-center justify-between bg-accent-500 px-6 text-primary-800">
         <div className="flex items-baseline gap-2">
-          <p className="flex gap-2 items-baseline">
+          <p className="flex items-baseline gap-2">
             {discount > 0 ? (
               <>
-                <span className="line-through font-semibold text-primary-700">
+                <span className="font-semibold text-primary-700 line-through">
                   ${regularPrice}
                 </span>
                 <span className="text-2xl">${regularPrice - discount}</span>
@@ -86,7 +86,7 @@ function DateSelector({ settings, bookedDates, cabin }) {
 
         {range?.from || range?.to ? (
           <button
-            className="border border-primary-800 py-2 px-4 text-sm font-semibold rounded-full"
+            className="rounded-full border border-primary-800 px-4 py-2 text-sm font-semibold"
             onClick={resetRange}
           >
             Clear

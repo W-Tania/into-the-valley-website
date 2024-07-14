@@ -15,12 +15,12 @@ export default function Page() {
       />
 
       <div className="relative z-10 text-center">
-        <h1 className="text-5xl lg:text-7xl text-primary-50 mb-20 tracking-tight font-normal">
+        <h1 className="mb-20 text-5xl font-normal tracking-tight text-primary-50 lg:text-7xl">
           Welcome to Stardew Valley
         </h1>
         <Link
           href="/cabins"
-          className="bg-accent-500 px-6 py-4 sm:px-8 sm:py-6 text-primary-800 text-base sm:text-lg font-semibold hover:bg-accent-600 transition-all"
+          className="bg-accent-500 px-6 py-4 text-base font-semibold text-primary-800 transition-all hover:bg-accent-600 sm:px-8 sm:py-6 sm:text-lg"
         >
           Explore cabins
         </Link>
